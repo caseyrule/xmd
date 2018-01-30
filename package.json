@@ -1,0 +1,55 @@
+{
+  "name": "xmd",
+  "version": "0.0.1",
+  "description": "XMD - Extensible Markdown",
+  "categories": ["Other"],
+  "activationEvents": [],
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.preview": {
+      "styles": ["./node_modules/katex/dist/katex.min.css"]
+    }
+  },
+  "displayName": "Markdown Extended",
+  "engines": {
+    "vscode": "^1.19.0"
+  },
+  "license": "MIT",
+  "main": "./out/extension",
+  "publisher": "caseyrule",
+  "repository": "https://github.com/caseyrule/xmd",
+  "scripts": {
+    "clean": "rm -rf out",
+    "compile": "tsc -p ./",
+    "lint": "tslint -p tsconfig.json -c tslint.json -e './node_modules/**/*.ts' -e './typings/**/*.ts' '**/*.ts'",
+    "postinstall": "npm link vscex",
+    "validate": "nsp check",
+    "vscode:prepublish": "npm run compile",
+    "watch": "tsc -watch -p ./"
+  },
+  "dependencies": {
+    "katex": "^0.9.0-beta",
+    "markdown-it": "^8.4.0",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-anchor": "^4.0.0",
+    "markdown-it-attrs": "^1.2.1",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-deflist": "^2.0.3",
+    "markdown-it-footnote": "^3.0.1",
+    "markdown-it-header-sections": "^1.0.0",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^2.8.3",
+    "@types/katex": "^0.5.0",
+    "@types/node": "^9.4.0",
+    "nsp": "^2.8.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.1",
+    "typescript-logging": "^0.5.0"
+  },
+  "optionalDependencies": {
+    "vscex": "^1.0.0"
+  }
+}
